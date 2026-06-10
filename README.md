@@ -1,6 +1,10 @@
 # 5G C-V2X for Autonomous Driving
 ### Technology Survey and Case Study Analysis
 
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Course](https://img.shields.io/badge/Course-DCCS307-green)
+![Year](https://img.shields.io/badge/Year-2026-orange)
+
 > A case study analysis of 5G C-V2X deployment and performance verification across EU cross-border trials.  
 > **Korea University Sejong Campus** · DCCS307 Computer Networks · Academic Presentation 2026
 
@@ -317,12 +321,33 @@ High vehicle density risks **radio resource collision and congestion**. NR V2X a
 <details>
 <summary><b>Q7. Who should lead the infrastructure investment — automakers, telecom operators, or governments?</b></summary>
 
-No single entity can build this alone. The EU project model demonstrates the realistic answer: **public-private multi-stakeholder collaboration**.  
-- **Telecom operators:** 5G gNB, MEC, network slicing deployment  
-- **Automakers:** C-V2X chipset integration, onboard sensor systems  
-- **Government / Public bodies:** RSU / smart road infrastructure, standardization, spectrum allocation, legal frameworks  
+No single entity can build this alone. The EU project model demonstrates the realistic answer: **public-private multi-stakeholder collaboration**.
+- **Telecom operators:** 5G gNB, MEC, network slicing deployment
+- **Automakers:** C-V2X chipset integration, onboard sensor systems
+- **Government / Public bodies:** RSU / smart road infrastructure, standardization, spectrum allocation, legal frameworks
 
 5G-MOBIX and 5GCroCo themselves involved government agencies, telecom operators, automakers, and research institutions across multiple countries — reflecting that C-V2X is a national transport infrastructure challenge, not a product feature.
+
+</details>
+
+<details>
+<summary><b>Q8. Autonomous driving focuses on wireless communication, but is wireless alone reliable enough during peak hours? What about in-vehicle wired communication?</b></summary>
+
+In-vehicle wired networks (CAN, Ethernet) handle safety-critical decisions first — emergency braking, for example, is triggered by onboard sensors (camera, LiDAR, radar) before any V2X message is processed. **V2X extends situational awareness beyond line-of-sight**, not replaces internal systems. During peak hours, NR V2X uses sensing-based resource selection, congestion control, and QoS priority management to maintain stability. The full system — wired internal networks + onboard sensors + V2X — operates as layered redundancy, not a single wireless dependency.
+
+</details>
+
+<details>
+<summary><b>Q9. How can vehicles safely communicate and share real-time situational awareness?</b></summary>
+
+Safe real-time communication in 5G C-V2X relies on four combined mechanisms:
+
+- **PC5 sidelink** — direct V2V communication without infrastructure, ideal for collision avoidance and platooning (low latency, no base station required)
+- **Uu interface** — cellular uplink via gNB connecting to MEC, remote control centers, and traffic management systems
+- **Network slicing** — URLLC slice for safety messages, eMBB slice for video/HD maps, isolated to prevent interference
+- **eRSU + dual-network redundancy** — maintains connectivity through coverage gaps and cross-border handovers
+
+Together, these ensure vehicles coordinate with surrounding vehicles, road infrastructure, and network systems in real time — making 5G C-V2X the foundational communication layer for autonomous driving.
 
 </details>
 
